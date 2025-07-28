@@ -54,7 +54,54 @@ selectOperator.addEventListener("change", () => {
     });
   }
 });
-g
+
+
+btnGenerate.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const operator = selectOperator.value;
+  const template = selectTemplate.value;
+  const shift = selectShift.value;
+  const name = selectOperator.options[selectOperator.selectedIndex].text;
+
+  let generate;
+  switch (operator) {
+    case "Steven":
+      generate = new TemplateSteven(name, shift);
+      break;
+    case "Hanin":
+      generate = new TemplateHanin(name, shift);
+      break;
+    case "Maheswari":
+      generate = new TemplateMaheswari(name, shift);
+      break;
+    default:
+      throw new Error("Operator tidak terdaftar");
+  }
+
+  const templateMap = {
+    "Kendala Top Up": "kendalaTopup",
+    "Top Up Sudah Bisa": "bisaTopUp",
+    "Gagal Bayar Merchant": "gagalBayar",
+    "Cara Buat Kartu": "caraBuat",
+    "Verifikasi Akun": "verifikasi",
+    "Cara Top Up": "caraTopup",
+    "Tarik Saldo Kartu": "tarikSaldo",
+    "Pengajuan Limit": "tambahLimit",
+    "Tambah Kuota Kartu": "tambahKuota",
+    "Mutasi Tidak Sinkron": "kendalaMutasi",
+    "Kebijakan Baru": "newKebijakan",
+    "Buat Kartu Gold": "buatGold",
+  };
+
+  const methodName = templateMap[template];
+  if (methodName && typeof generate[methodName] === "function") {
+    hasiltemplate.value = generate[methodName]();
+  } else {
+    hasiltemplate.value =
+      "Template ini tidak tersedia, periksa kembali nama operator";
+  }
+});
 
 btnReset.addEventListener("click", () => {
   selectOperator.indexSelected = 0;

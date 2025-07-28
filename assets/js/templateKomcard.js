@@ -138,7 +138,7 @@ class TemplateMaheswari {
   bisaTopUp() {
     return (
       this.opening() +
-      `Terkait kendala gagal top up pada kartu Komcard saat ini bisa dicoba kembali untuk top upnya ya kak. Apabila masih terkendala kakak bisa konfirmasi ke live chat kembali \nMohon maaf atas ketidaknyamananya`
+      `Terkait kendala gagal top up pada kartu Komcard saat ini bisa dicoba kembali untuk top upnya ya kak. Apabila masih terkendala kakak bisa konfirmasi ke live\nchat kembali, mohon maaf atas ketidaknyamananya`
     );
   }
 
