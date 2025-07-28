@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/komcard.css" />
+
+    <title>Chat Generator | Komcard</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="./assets/images/logo.png" alt="gear-logo" />
+        <span>Chat Generator</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Komship</a></li>
+          <li><a href="/komcard.html">Komcard</a></li>
+          <li><a href="#">Penarikan Saldo</a></li>
+          <li><a href="#">Report</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="title-content">
+        <h1>PENARIKAN SALDO</h1>
+        <div class="slide-container">
+          <h2>Halo Kak Hanin |</h2>
+          <div class="content-slide">
+            <ol>
+              <li><span>Selamat Pagi</span></li>
+              <li><span>Selamat Bekerja</span></li>
+              <li><span>Bismillah, Bisa!</span></li>
+              <li><span>Have a Good Day!</span></li>
+              <li><span>Yuk Bisa Yuk!</span></li>
+              <li><span>Semangat Yaa..</span></li>
+            </ol>
+          </div>
+        </div>
+        <!-- <span>Halo Kak Hanin, selamat pagi</span> -->
+      </section>
+      <section class="form">
+        <h2>Form Input Template</h2>
+        <form action="#">
+          <label for="operator">Nama Operator Customer Support</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/user.png" alt="user-icon" />
+            <select name="nama_operator" id="operator">
+              <option value="">-- Pilih Operartor --</option>
+              <option value="Hanin">Hanin</option>
+              <option value="Steven">Steven</option>
+              <option value="Maheswari">Maheswari</option>
+            </select>
+          </div>
+
+          <label for="user-shift">Jadwal Shift Operator</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/clock.png" alt="shift-icon" />
+            <select name="shift_operator" id="shift">
+              <option value="">-- Pilih Shift --</option>
+              <option value="pagi">Pagi</option>
+              <option value="siang">Siang</option>
+              <option value="sore">Sore</option>
+              <option value="malam">Malam</option>
+            </select>
+          </div>
+
+          <label for="pilihan-template">Pilih Template</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/menu.png" alt="shift-icon" />
+            <select name="pilihan-template" id="pilihTemplate">
+              <option value="">-- Pilih Template --</option>
+            </select>
+          </div>
+          <div class="button-container">
+            <button id="generate" name="generate">Generate</button>
+            <button id="reset" name="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+      <section class="result">
+        <div class="title-result">
+          <img src="./assets/images/icon/trolley.png" alt="result-icon" />
+          <h2>Hasil Template</h2>
+        </div>
+
+        <div class="box-result">
+          <textarea
+            name="result-box"
+            id="result-box"
+            placeholder="Hasil akan muncul disini"
+            readonly
+          ></textarea>
+          <button id="copyResult">Pick Up Template</button>
+          <div class="cpy-container">
+            <div class="cpy-pop">
+              <img src="./assets/images/icon/Copy-256.png" alt="copy pop up" />
+              <span>Yeay Template Berhasil Terpick Up !</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/penarikan.js" type="module"></script>
+  </body>
+</html>
