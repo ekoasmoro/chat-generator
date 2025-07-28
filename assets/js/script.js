@@ -100,7 +100,7 @@ btnCopy.addEventListener("click", () => {
   document.execCommand("copy");
   cpyPop.style.display = "block";
 
-  setInterval(() => {
+  setTimeout(() => {
     cpyPop.style.display = "none";
   }, 2000);
 })

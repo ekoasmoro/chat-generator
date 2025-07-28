@@ -51,9 +51,10 @@
           <div class="select-form">
             <img src="./assets/images/icon/user.png" alt="user-icon" />
             <select name="nama_operator" id="operator">
-              <option value="hanin">Hanin</option>
-              <option value="steven">Steven</option>
-              <option value="maheswari">Maheswari</option>
+              <option value="">-- Pilih Operartor --</option>
+              <option value="Hanin">Hanin</option>
+              <option value="Steven">Steven</option>
+              <option value="Maheswari">Maheswari</option>
             </select>
           </div>
 
@@ -61,6 +62,7 @@
           <div class="select-form">
             <img src="./assets/images/icon/clock.png" alt="shift-icon" />
             <select name="shift_operator" id="shift">
+              <option value="">-- Pilih Shift --</option>
               <option value="pagi">Pagi</option>
               <option value="siang">Siang</option>
               <option value="sore">Sore</option>
@@ -72,27 +74,9 @@
           <div class="select-form">
             <img src="./assets/images/icon/menu.png" alt="shift-icon" />
             <select name="pilihan-template" id="pilihTemplate">
-              <option value="pushPengiriman">Push Pengiriman</option>
-              <option value="pushReturn">Push Return</option>
-              <option value="pengirimanUlang">Pengiriman Ulang</option>
-              <option value="updatePod">Update POD</option>
-              <option value="return">Pengiriman di Return</option>
-              <option value="bantuKlaim">Bantu Ajukan Klaim</option>
-              <option value="belumPu">Bantu Pick Up</option>
+              <option value="">-- Pilih Template --</option>
             </select>
           </div>
-
-          <label for="input-resi">Input Resi</label>
-          <div class="input-form">
-            <img src="./assets/images/icon/barcode.png" alt="shift-icon" />
-            <input
-              type="text"
-              name="inputResi"
-              id="inputResi"
-              placeholder="Input resi disini"
-            />
-          </div>
-
           <div class="button-container">
             <button id="generate" name="generate">Generate</button>
             <button id="reset" name="reset">Reset</button>
@@ -112,10 +96,16 @@
             placeholder="Hasil akan muncul disini"
             readonly
           ></textarea>
-
           <button id="copyResult">Pick Up Template</button>
+          <div class="cpy-container">
+            <div class="cpy-pop">
+              <img src="./assets/images/icon/Copy-256.png" alt="copy pop up" />
+              <span>Yeay Template Berhasil Terpick Up !</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+    <script src="./assets/js/komcard.js" type="module"></script>
   </body>
 </html>
