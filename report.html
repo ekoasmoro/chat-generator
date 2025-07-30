@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/report.css" />
+
+    <title>Chat Generator | Report</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="./assets/images/logo.png" alt="gear-logo" />
+        <span>Chat Generator</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Komship</a></li>
+          <li><a href="/komcard.html">Komcard</a></li>
+          <li><a href="/penarikan.html">Penarikan Saldo</a></li>
+          <li><a href="#">Report</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="title-content">
+        <h1>REPORT</h1>
+        <div class="slide-container">
+          <h2>Halo Kak <span id="opt"></span> |</h2>
+          <div class="content-slide">
+            <ol>
+              <li><span id="sft">Selamat Pagi</span></li>
+              <li><span>Selamat Bekerja</span></li>
+              <li><span>Bismillah, Bisa!</span></li>
+              <li><span>Have a Good Day!</span></li>
+              <li><span>Yuk Bisa Yuk!</span></li>
+              <li><span>Semangat Yaa..</span></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section class="form">
+        <h2>Form Input Template</h2>
+        <div class="content-container">
+          <label for="operator">Nama Operator Customer Support</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/user.png" alt="user-icon" />
+            <select name="nama_operator" id="operator">
+              <option value="">-- Pilih Operartor --</option>
+              <option value="Hanin">Hanin</option>
+              <option value="Steven">Steven</option>
+              <option value="Maheswari">Maheswari</option>
+            </select>
+          </div>
+
+          <label for="user-shift">Jadwal Shift Operator</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/clock.png" alt="shift-icon" />
+            <select name="shift_operator" id="shift">
+              <option value="">-- Pilih Shift --</option>
+              <option value="pagi">Pagi</option>
+              <option value="siang">Siang</option>
+              <option value="sore">Sore</option>
+              <option value="malam">Malam</option>
+            </select>
+          </div>
+
+          <label for="pilihan-template">Pilih Main Template</label>
+          <div class="select-form">
+            <img src="./assets/images/icon/menu.png" alt="menu-icon" />
+            <select name="pilihan-template" id="pilihTemplate">
+              <option value="">-- Pilih Main Template --</option>
+              <option value="ekspedisi">Ekspedisi</option>
+              <option value="bugs">Bugs Report</option>
+              <option value="cso">CSO Report</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section class="result">
+        <div class="ekspedisi-container">
+          <h2>Template Untuk Report Ekspedisi</h2>
+
+          <div class="sub-container">
+            <div class="first-input">
+              <div class="sub-template">
+                <label for="subtemplate">Pilih Sub Template</label>
+                <div class="select-form">
+                  <img src="./assets/images/icon/list.png" alt="sub-icon" />
+                  <select name="pilih-template" id="subtemplate-ekspedisi">
+                    <option value="">-- Pilih Template --</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="idreport-container">
+                <label for="idreport">Input ID Report</label>
+                <div class="select-form">
+                  <img
+                    src="./assets/images/icon/qr-code.png"
+                    alt="idreport-icon"
+                  />
+                  <input
+                    type="text"
+                    name="idReport"
+                    id="idReport"
+                    placeholder="Input ID Report disini"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="second-input">
+              <label for="idreport">Input ID Resi</label>
+              <div class="input-resi">
+                <img src="./assets/images/icon/barcode.png" alt="shift-icon" />
+                <textarea
+                  name="idresi"
+                  id="idresi"
+                  placeholder="Input resi"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button id="generate-ekspedisi" name="generate">Generate</button>
+            <button id="reset-ekspedisi" name="reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="bugs-container">
+          <h2>Template Untuk Report Bugs</h2>
+
+          <div class="sub-container">
+            <div class="first-input">
+              <div class="sub-template">
+                <label for="subtemplate">Pilih Sub Template</label>
+                <div class="select-form">
+                  <img src="./assets/images/icon/list.png" alt="sub-icon" />
+                  <select name="pilih-template" id="subtemplate-bugs">
+                    <option value="">-- Pilih Template --</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="idreport-container">
+                <label for="idreport">Input ID Report</label>
+                <div class="select-form">
+                  <img
+                    src="./assets/images/icon/qr-code.png"
+                    alt="idreport-icon"
+                  />
+                  <input
+                    type="text"
+                    name="idReport"
+                    id="idReport"
+                    placeholder="Input ID Report disini"
+                  />
+                </div>
+              </div>
+
+              <div class="email-container">
+                <label for="email">Email Akun</label>
+                <div class="select-form">
+                  <img
+                    src="./assets/images/icon/personal.png"
+                    alt="email-icon"
+                  />
+                  <input
+                    type="text"
+                    name="emailAkun"
+                    id="emailAkun"
+                    placeholder="Input email akun"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="second-input">
+              <label for="idreport">Deskripsi</label>
+              <div class="input-deskripsi">
+                <img src="./assets/images/icon/wirte.png" alt="deskripsi" />
+                <textarea
+                  name="deskripsi"
+                  id="deskripsi"
+                  placeholder="Tuliskan detail kendala"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button id="generate-bugs" name="generate">Generate</button>
+            <button id="reset-bugs" name="reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="cso-container">
+          <h2>Template Untuk Report CSO</h2>
+
+          <div class="subcso-container">
+            <div class="cso-input">
+              <div class="sub-template">
+                <label for="subtemplate">Pilih Sub Template</label>
+                <div class="select-form">
+                  <img src="./assets/images/icon/list.png" alt="sub-icon" />
+                  <select name="pilih-template" id="subtemplate-cso">
+                    <option value="">-- Pilih Template --</option>
+                  </select>
+                </div>
+              </div>
+              <div class="second-input">
+                <label for="idreport">Deskripsi</label>
+                <div class="input-resi">
+                  <img
+                    src="./assets/images/icon/wirte.png"
+                    alt="deskripsi-icon"
+                  />
+                  <textarea
+                    name="deskripsi"
+                    id="deskripsi"
+                    placeholder="Input daftar resi atau email"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button id="generate-cso" name="generate">Generate</button>
+            <button id="reset-cso" name="reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="result-container">
+          <h2>Hasil Template</h2>
+          <div class="box-result">
+            <textarea
+              name="result-box"
+              id="result-box"
+              placeholder="Hasil akan muncul disini"
+              readonly
+            ></textarea>
+            <button id="copyResult">Pick Up Template</button>
+            <div class="cpy-container">
+              <div class="cpy-pop">
+                <img
+                  src="./assets/images/icon/Copy-256.png"
+                  alt="copy pop up"
+                />
+                <span>Yeay Template Berhasil Terpick Up !</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>© 2025 Website by Eko Asmoro | Chat Generator v2.0 Prototype </span>
+    </footer>
+    <script src="./assets/js/report.js" type="module"></script>
+  </body>
+</html>
