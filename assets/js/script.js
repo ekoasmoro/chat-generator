@@ -1,7 +1,7 @@
 import { Template } from "./template.js";
 
-const operatorSelect = document.getElementById("operator");
-const shiftSelect = document.getElementById("shift");
+const selectOperator = document.getElementById("operator");
+const selectShift = document.getElementById("shift");
 const pilihTemplate = document.getElementById("pilihTemplate");
 const inputResi = document.getElementById("inputResi");
 const resiInvalid = document.querySelector(".error-message");
@@ -10,12 +10,64 @@ const btnReset = document.getElementById("reset");
 const result = document.getElementById("result-box");
 const btnCopy = document.getElementById("copyResult");
 const cpyPop = document.querySelector(".cpy-container");
+const sftSpan = document.getElementById("sft");
+const optSpan = document.getElementById("opt");
+
+
+const shiftGreetingMap = {
+  pagi: "Selamat Pagi",
+  siang: "Selamat Siang",
+  sore: "Selamat Sore",
+  malam: "Selamat Malam",
+};
+
+function updateGreeting() {
+  const shift = selectShift.value;
+  const operator = selectOperator.value;
+
+  sftSpan.textContent = shiftGreetingMap[shift] || "Selamat Datang";
+  optSpan.textContent = operator || "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedOperator = localStorage.getItem("selectOperator");
+  const savedShift = localStorage.getItem("selectShift");
+
+  if (savedOperator) selectOperator.value = savedOperator;
+  if (savedShift) selectShift.value = savedShift;
+
+  updateGreeting();
+});
+
+selectOperator.addEventListener("change", () => {
+  localStorage.setItem("selectOperator", selectOperator.value);
+  updateGreeting();
+});
+
+selectShift.addEventListener("change", () => {
+  localStorage.setItem("selectShift", selectShift.value);
+  updateGreeting();
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.key === "selectOperator") {
+    selectOperator.value = event.newValue || "";
+  }
+
+  if (event.key === "selectShift") {
+    selectShift.value = event.newValue || "";
+  }
+
+  updateGreeting();
+});
+
+
 
 btnGenerate.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const nama = operatorSelect.value;
-  const shift = shiftSelect.value;
+  const nama = selectOperator.value;
+  const shift = selectShift.value;
   const idResi = inputResi.value.trim();
   const pilihanTemplate = pilihTemplate.value;
 

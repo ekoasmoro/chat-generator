@@ -9,7 +9,7 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <title>Chat Generator</title>
+    <title>Chat Generator | Komship</title>
   </head>
   <body>
     <header>
@@ -21,8 +21,8 @@
         <ul>
           <li><a href="#">Komship</a></li>
           <li><a href="/komcard.html">Komcard</a></li>
-          <li><a href="#">Penarikan Saldo</a></li>
-          <li><a href="#">Report</a></li>
+          <li><a href="/penarikan.html">Penarikan Saldo</a></li>
+          <li><a href="/report.html">Report</a></li>
         </ul>
       </nav>
     </header>
@@ -30,7 +30,7 @@
       <section class="title-content">
         <h1>KOMSHIP</h1>
         <div class="slide-container">
-          <h2>Halo Kak <span id="opt">Hanin</span> |</h2>
+          <h2>Halo Kak <span id="opt"></span> |</h2>
           <div class="content-slide">
             <ol>
               <li><span id="sft">Selamat Pagi</span></li>
@@ -42,7 +42,6 @@
             </ol>
           </div>
         </div>
-        <!-- <span>Halo Kak Hanin, selamat pagi</span> -->
       </section>
       <section class="form">
         <h2>Form Input Template</h2>
@@ -51,6 +50,7 @@
           <div class="select-form">
             <img src="./assets/images/icon/user.png" alt="user-icon" />
             <select name="nama_operator" id="operator">
+              <option value="">-- Pilih Operator --</option>
               <option value="Hanin">Hanin</option>
               <option value="Steven">Steven</option>
               <option value="Maheswari">Maheswari</option>
@@ -61,6 +61,7 @@
           <div class="select-form">
             <img src="./assets/images/icon/clock.png" alt="shift-icon" />
             <select name="shift_operator" id="shift">
+              <option value="">-- Pilih Shift --</option>
               <option value="pagi">Pagi</option>
               <option value="siang">Siang</option>
               <option value="sore">Sore</option>
@@ -72,6 +73,7 @@
           <div class="select-form">
             <img src="./assets/images/icon/menu.png" alt="shift-icon" />
             <select name="pilihan-template" id="pilihTemplate">
+              <option value="">-- Pilih Template --</option>
               <option value="pushPengiriman">Push Pengiriman</option>
               <option value="pushReturn">Push Return</option>
               <option value="pengirimanUlang">Pengiriman Ulang</option>
@@ -105,11 +107,7 @@
         </form>
       </section>
       <section class="result">
-        <div class="title-result">
-          <img src="./assets/images/icon/trolley.png" alt="result-icon" />
-          <h2>Hasil Template</h2>
-        </div>
-
+        <h2>Hasil Template</h2>
         <div class="box-result">
           <textarea
             name="result-box"
@@ -127,6 +125,9 @@
         </div>
       </section>
     </main>
+    <footer>
+      <span>© 2025 Website by Eko Asmoro | Chat Generator v2.0 Prototype </span>
+    </footer>
 
     <script src="./assets/js/script.js" type="module"></script>
   </body>

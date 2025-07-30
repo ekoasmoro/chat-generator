@@ -101,7 +101,7 @@ class TemplateHanin {
 
   buatGold() {
     return (
-      this.opening +
+      this.opening() +
       `Baik kak, untuk buat kartu gold masih sama seperti sebelumnya kak di fitur keuangan -> kartu komcards -> buat kartu ya kak`
     );
   }

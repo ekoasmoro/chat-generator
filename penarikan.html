@@ -7,9 +7,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/komcard.css" />
+    <link rel="stylesheet" href="./assets/css/penarikan.css" />
 
-    <title>Chat Generator | Komcard</title>
+    <title>Chat Generator | Penarikan</title>
   </head>
   <body>
     <header>
@@ -22,7 +22,7 @@
           <li><a href="/index.html">Komship</a></li>
           <li><a href="/komcard.html">Komcard</a></li>
           <li><a href="#">Penarikan Saldo</a></li>
-          <li><a href="#">Report</a></li>
+          <li><a href="/report.html">Report</a></li>
         </ul>
       </nav>
     </header>
@@ -30,10 +30,10 @@
       <section class="title-content">
         <h1>PENARIKAN SALDO</h1>
         <div class="slide-container">
-          <h2>Halo Kak Hanin |</h2>
+          <h2>Halo Kak <span id="opt"></span> |</h2>
           <div class="content-slide">
             <ol>
-              <li><span>Selamat Pagi</span></li>
+              <li><span id="sft">Selamat Pagi</span></li>
               <li><span>Selamat Bekerja</span></li>
               <li><span>Bismillah, Bisa!</span></li>
               <li><span>Have a Good Day!</span></li>
@@ -42,7 +42,6 @@
             </ol>
           </div>
         </div>
-        <!-- <span>Halo Kak Hanin, selamat pagi</span> -->
       </section>
       <section class="form">
         <h2>Form Input Template</h2>
@@ -84,11 +83,7 @@
         </form>
       </section>
       <section class="result">
-        <div class="title-result">
-          <img src="./assets/images/icon/trolley.png" alt="result-icon" />
-          <h2>Hasil Template</h2>
-        </div>
-
+        <h2>Hasil Template</h2>
         <div class="box-result">
           <textarea
             name="result-box"
@@ -106,6 +101,9 @@
         </div>
       </section>
     </main>
+    <footer>
+      <span>© 2025 Website by Eko Asmoro | Chat Generator v2.0 Prototype </span>
+    </footer>
     <script src="./assets/js/penarikan.js" type="module"></script>
   </body>
 </html>

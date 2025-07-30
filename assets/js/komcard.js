@@ -12,6 +12,23 @@ const btnReset = document.getElementById("reset");
 const hasiltemplate = document.getElementById("result-box");
 const btnPickup = document.getElementById("copyResult");
 const cpyPop = document.querySelector(".cpy-container");
+const sftSpan = document.getElementById("sft");
+const optSpan = document.getElementById("opt");
+
+const shiftGreetingMap = {
+  pagi: "Selamat Pagi",
+  siang: "Selamat Siang",
+  sore: "Selamat Sore",
+  malam: "Selamat Malam",
+};
+
+function updateGreeting() {
+  const shift = selectShift.value;
+  const operator = selectOperator.value;
+
+  sftSpan.textContent = shiftGreetingMap[shift] || "Selamat Datang";
+  optSpan.textContent = operator || "";
+}
 
 const listTemplate = {
   Steven: [
@@ -40,21 +57,73 @@ const listTemplate = {
   ],
 };
 
-selectOperator.addEventListener("change", () => {
-  const operatorTerpilih = selectOperator.value;
+const templateMap = {
+  "Kendala Top Up": "kendalaTopup",
+  "Top Up Sudah Bisa": "bisaTopUp",
+  "Gagal Bayar Merchant": "gagalBayar",
+  "Cara Buat Kartu": "caraBuat",
+  "Verifikasi Akun": "verifikasi",
+  "Cara Top Up": "caraTopup",
+  "Tarik Saldo Kartu": "tarikSaldo",
+  "Pengajuan Limit": "tambahLimit",
+  "Tambah Kuota Kartu": "tambahKuota",
+  "Mutasi Tidak Sinkron": "kendalaMutasi",
+  "Kebijakan Baru": "newKebijakan",
+  "Buat Kartu Gold": "buatGold",
+};
 
+function loadTemplateOptions(operator) {
   selectTemplate.innerHTML = `<option value="">-- Pilih Template --</option>`;
+  const templates = listTemplate[operator];
+  if (!templates) return;
 
-  if (listTemplate[operatorTerpilih]) {
-    listTemplate[operatorTerpilih].forEach((template) => {
-      const option = document.createElement("option");
-      option.value = template;
-      option.textContent = template;
-      selectTemplate.append(option);
-    });
+  templates.forEach((template) => {
+    const option = document.createElement("option");
+    option.value = template;
+    option.textContent = template;
+    selectTemplate.append(option);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedOperator = localStorage.getItem("selectOperator");
+  const savedShift = localStorage.getItem("selectShift");
+
+  if (savedOperator) {
+    selectOperator.value = savedOperator;
+    loadTemplateOptions(savedOperator);
   }
+
+  if (savedShift) {
+    selectShift.value = savedShift;
+  }
+  updateGreeting();
 });
 
+selectOperator.addEventListener("change", () => {
+  const selected = selectOperator.value;
+  localStorage.setItem("selectOperator", selected);
+  loadTemplateOptions(selected);
+  updateGreeting();
+});
+
+selectShift.addEventListener("change", () => {
+  localStorage.setItem("selectShift", selectShift.value);
+  updateGreeting();
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.key === "selectOperator") {
+    selectOperator.value = event.newValue || "";
+    loadTemplateOptions(event.newValue);
+  }
+
+  if (event.key === "selectShift") {
+    selectShift.value = event.newValue || "";
+  }
+
+  updateGreeting();
+});
 
 btnGenerate.addEventListener("click", (e) => {
   e.preventDefault();
@@ -76,38 +145,22 @@ btnGenerate.addEventListener("click", (e) => {
       generate = new TemplateMaheswari(name, shift);
       break;
     default:
-      throw new Error("Operator tidak terdaftar");
+      hasiltemplate.value = "Operator tidak dikenali.";
+      return;
   }
-
-  const templateMap = {
-    "Kendala Top Up": "kendalaTopup",
-    "Top Up Sudah Bisa": "bisaTopUp",
-    "Gagal Bayar Merchant": "gagalBayar",
-    "Cara Buat Kartu": "caraBuat",
-    "Verifikasi Akun": "verifikasi",
-    "Cara Top Up": "caraTopup",
-    "Tarik Saldo Kartu": "tarikSaldo",
-    "Pengajuan Limit": "tambahLimit",
-    "Tambah Kuota Kartu": "tambahKuota",
-    "Mutasi Tidak Sinkron": "kendalaMutasi",
-    "Kebijakan Baru": "newKebijakan",
-    "Buat Kartu Gold": "buatGold",
-  };
 
   const methodName = templateMap[template];
   if (methodName && typeof generate[methodName] === "function") {
     hasiltemplate.value = generate[methodName]();
   } else {
     hasiltemplate.value =
-      "Template ini tidak tersedia, periksa kembali nama operator";
+      "Template ini tidak tersedia, periksa kembali nama operator.";
   }
 });
 
 btnReset.addEventListener("click", () => {
-  selectOperator.indexSelected = 0;
-  selectShift.indexSelected = 0;
+  selectTemplate.selectedIndex = 0;
   hasiltemplate.value = "";
-  selectTemplate.indexSelected = 0;
 });
 
 btnPickup.addEventListener("click", () => {
