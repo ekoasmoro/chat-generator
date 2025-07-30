@@ -236,6 +236,10 @@ button {
   font-size: 0.8rem;
 }
 
+#copyResult {
+  width: 160px; 
+}
+
 button:hover {
   background-color: #272d9e;
 }
