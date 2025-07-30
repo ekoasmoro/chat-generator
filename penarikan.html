@@ -7,9 +7,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/penarikan.css" />
 
-    <title>Chat Generator | Komship</title>
+    <title>Chat Generator | Penarikan</title>
   </head>
   <body>
     <header>
@@ -19,16 +19,16 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#">Komship</a></li>
+          <li><a href="/index.html">Komship</a></li>
           <li><a href="/komcard.html">Komcard</a></li>
-          <li><a href="/penarikan.html">Penarikan Saldo</a></li>
+          <li><a href="#">Penarikan Saldo</a></li>
           <li><a href="/report.html">Report</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="title-content">
-        <h1>KOMSHIP</h1>
+        <h1>PENARIKAN SALDO</h1>
         <div class="slide-container">
           <h2>Halo Kak <span id="opt"></span> |</h2>
           <div class="content-slide">
@@ -50,7 +50,7 @@
           <div class="select-form">
             <img src="./assets/images/icon/user.png" alt="user-icon" />
             <select name="nama_operator" id="operator">
-              <option value="">-- Pilih Operator --</option>
+              <option value="">-- Pilih Operartor --</option>
               <option value="Hanin">Hanin</option>
               <option value="Steven">Steven</option>
               <option value="Maheswari">Maheswari</option>
@@ -74,32 +74,8 @@
             <img src="./assets/images/icon/menu.png" alt="shift-icon" />
             <select name="pilihan-template" id="pilihTemplate">
               <option value="">-- Pilih Template --</option>
-              <option value="pushPengiriman">Push Pengiriman</option>
-              <option value="pushReturn">Push Return</option>
-              <option value="pengirimanUlang">Pengiriman Ulang</option>
-              <option value="updatePod">Update POD</option>
-              <option value="return">Pengiriman di Return</option>
-              <option value="bantuKlaim">Bantu Ajukan Klaim</option>
-              <option value="belumPu">Bantu Pick Up</option>
             </select>
           </div>
-
-          <label for="input-resi">Input Resi</label>
-          <div class="input-form">
-            <img src="./assets/images/icon/barcode.png" alt="shift-icon" />
-            <div class="wrapper-input">
-              <input
-                type="text"
-                name="inputResi"
-                id="inputResi"
-                placeholder="Input resi disini"
-              />
-              <div class="error-message">
-                <span>Resi tidak valid!</span>
-              </div>
-            </div>
-          </div>
-
           <div class="button-container">
             <button id="generate" name="generate">Generate</button>
             <button id="reset" name="reset">Reset</button>
@@ -128,7 +104,6 @@
     <footer>
       <span>© 2025 Website by Eko Asmoro | Chat Generator v2.0 Prototype </span>
     </footer>
-
-    <script src="./assets/js/script.js" type="module"></script>
+    <script src="./assets/js/penarikan.js" type="module"></script>
   </body>
 </html>
