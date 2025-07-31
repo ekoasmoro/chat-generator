@@ -129,11 +129,11 @@ class Generate extends Template {
     } else if (jntId === "JO") {
       this.hasilCheck = "J&T";
     } else if (idexId === "IDE") {
-      this.hasilCheck = "IDE";
+      this.hasilCheck = "ID Ekspress";
     } else if (sapId === "KOMSHIP") {
       this.hasilCheck = "SAP";
     } else if (id.length === 12 && jntId !== "JO") {
-      this.hasilCheck = "Sicepat";
+      this.hasilCheck = "SiCepat";
     } else {
       throw new Error("Resi tidak valid!");
     }
