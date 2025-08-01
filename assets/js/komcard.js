@@ -42,8 +42,15 @@ const listTemplate = {
     "Pengajuan Limit",
     "Tambah Kuota Kartu",
     "Mutasi Tidak Sinkron",
+    "Perubahan Nomor"
   ],
-  Hanin: ["Kebijakan Baru", "Buat Kartu Gold", "Gagal Bayar Merchant"],
+  Hanin: [
+    "Kebijakan Baru",
+    "Buat Kartu Gold",
+    "Gagal Bayar Merchant",
+    "Verifikasi Akun",
+    "Perubahan Nomor"
+  ],
   Maheswari: [
     "Kendala Top Up",
     "Top Up Sudah Bisa",
@@ -54,6 +61,7 @@ const listTemplate = {
     "Tarik Saldo Kartu",
     "Pengajuan Limit",
     "Tambah Kuota Kartu",
+    "Perubahan Nomor"
   ],
 };
 
@@ -70,6 +78,7 @@ const templateMap = {
   "Mutasi Tidak Sinkron": "kendalaMutasi",
   "Kebijakan Baru": "newKebijakan",
   "Buat Kartu Gold": "buatGold",
+  "Perubahan Nomor": "perubahanNo"
 };
 
 function loadTemplateOptions(operator) {
@@ -105,11 +114,16 @@ selectOperator.addEventListener("change", () => {
   localStorage.setItem("selectOperator", selected);
   loadTemplateOptions(selected);
   updateGreeting();
+  hasiltemplate.value = "";
 });
 
 selectShift.addEventListener("change", () => {
   localStorage.setItem("selectShift", selectShift.value);
   updateGreeting();
+});
+
+selectTemplate.addEventListener("change", () => {
+  hasiltemplate.value = "";
 });
 
 window.addEventListener("storage", (event) => {
@@ -153,8 +167,7 @@ btnGenerate.addEventListener("click", (e) => {
   if (methodName && typeof generate[methodName] === "function") {
     hasiltemplate.value = generate[methodName]();
   } else {
-    hasiltemplate.value =
-      "Template ini tidak tersedia, periksa kembali nama operator.";
+    hasiltemplate.value = "Pastikan semua form input terisi!";
   }
 });
 

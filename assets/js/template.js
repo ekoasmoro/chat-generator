@@ -56,11 +56,11 @@ class Template {
   bantuPickup() {
     return (
       this.opening() +
-      `Baik Kak, ${this.name} bantu buatkan laporanya ke ekspedisi ${this.hasilCheck} pusat untuk segera proses pick up mohon dibantu isikan data berikut ya kak \n
+      `Mohon maaf sebelumnya kak terkait keterlambatan pick up resi ${this.idResi}, ${this.name} bantu buatkan laporanya ke ekspedisi ${this.hasilCheck} pusat untuk segera proses pick up mohon dibantu isikan data berikut ya kak \n
       Nama Penanggung Jawab (PIC): 
       No. HP: 
       Alamat Gudang Pickup: 
-      Salah Satu No. Resi:
+      Salah Satu No. Resi: ${this.idResi}
       `
     );
   }

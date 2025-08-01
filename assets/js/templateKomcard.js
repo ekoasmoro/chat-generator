@@ -79,6 +79,19 @@ class TemplateSteven {
       `Baik kak, untuk kendala mutasi atau balance saldo yang tidak sinkron boleh dibantu infokan 4 no terakhir kartu dan email akun komcardnya kak`
     );
   }
+
+  perubahanNo() {
+    return (
+      this.opening() +
+      `Baik kak terkait perubahan No. Whatsapp atau No. HP yang dapat dihubungi boleh dibantu isikan data berikut \n
+        Email Akun:
+        No. HP Lama:
+        No. HP Terbaru:
+        Keterangan: (Alasan pergantian No. HP)
+     
+Kemudian mohon dibantu untuk lampirkan foto KTP guna verifikasi ulang`
+    );
+  }
 }
 
 class TemplateHanin {
@@ -116,8 +129,27 @@ class TemplateHanin {
         Nominal Tagihan: `
     );
   }
-};
 
+  verifikasi() {
+    return (
+      this.opening() +
+      `Terkait verifikasi data diri untuk layanan Komcard/Komship saat ini dalam proses ya kak. Mohon kesediaan waktunya untuk menunggu 30 - 60 menit kedepan, atau maksimal 1x24 jam`
+    );
+  }
+
+  perubahanNo() {
+    return (
+      this.opening() +
+      `Baik kak terkait perubahan No. Whatsapp atau No. HP yang dapat dihubungi boleh dibantu isikan data berikut \n
+        Email Akun:
+        No. HP Lama:
+        No. HP Terbaru:
+        Keterangan: (Alasan pergantian No. HP)
+
+Kemudian mohon dibantu untuk lampirkan foto KTP guna verifikasi ulang`
+    );
+  }
+}
 
 class TemplateMaheswari {
   constructor(name, shift) {
@@ -200,7 +232,19 @@ class TemplateMaheswari {
       `Baik kak, untuk kendala mutasi atau balance saldo yang tidak sinkron boleh dibantu infokan 4 no terakhir kartu dan email akun komcardnya kak`
     );
   }
-};
+
+  perubahanNo() {
+    return (
+      this.opening() +
+      `Baik kak terkait perubahan No. Whatsapp atau No. HP yang dapat dihubungi boleh dibantu isikan data berikut \n
+        Email Akun:
+        No. HP Lama:
+        No. HP Terbaru:
+        Keterangan: (Alasan pergantian No. HP)
+
+Kemudian mohon dibantu untuk lampirkan foto KTP guna verifikasi ulang`
+    );
+  }
+}
 
 export { TemplateSteven, TemplateHanin, TemplateMaheswari };
-

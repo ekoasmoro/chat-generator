@@ -61,7 +61,9 @@ window.addEventListener("storage", (event) => {
   updateGreeting();
 });
 
-
+pilihTemplate.addEventListener("change", () => {
+  result.value = "";
+})
 
 btnGenerate.addEventListener("click", function (e) {
   e.preventDefault();
@@ -106,7 +108,7 @@ btnGenerate.addEventListener("click", function (e) {
     default:
       hasil = "Template tidak ditemukan";
   }
-
+  resiInvalid.style.display = "none"
   document.getElementById("result-box").value = hasil;
 });
 
@@ -138,6 +140,7 @@ class Generate extends Template {
         throw new Error("Resi tidak valid!");
     }
   }
+
 };
 
 
