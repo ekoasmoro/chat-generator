@@ -122,20 +122,20 @@ class Generate extends Template {
     const jntId = id.substring(0, 2);
     const idexId = id.substring(0, 3);
 
-    if (id.length === 16) {
-      this.hasilCheck = "JNE";
-    } else if (ninjaId === "KOMRCKOM") {
-      this.hasilCheck = "Ninja";
-    } else if (jntId === "JO") {
-      this.hasilCheck = "J&T";
-    } else if (idexId === "IDE") {
-      this.hasilCheck = "IDE";
+    if (ninjaId === "KOMRCKOM") {
+        this.hasilCheck = "Ninja";
     } else if (sapId === "KOMSHIP") {
-      this.hasilCheck = "SAP";
+        this.hasilCheck = "SAP";
+    } else if (idexId === "IDE") {
+        this.hasilCheck = "ID Ekspress";
+    } else if (jntId === "JO") {
+        this.hasilCheck = "J&T";
+    } else if (id.length === 16) {
+        this.hasilCheck = "JNE";
     } else if (id.length === 12 && jntId !== "JO") {
-      this.hasilCheck = "Sicepat";
+        this.hasilCheck = "SiCepat";
     } else {
-      throw new Error("Resi tidak valid!");
+        throw new Error("Resi tidak valid!");
     }
   }
 };
