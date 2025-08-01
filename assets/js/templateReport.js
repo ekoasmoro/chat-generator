@@ -1,5 +1,5 @@
 class TemplateEkspedisi {
-  constructor(idReport, idResi) {
+  constructor(idReport, idResi, deskripsi) {
     this.idReport = idReport;
     this.idResi = idResi;
   }
@@ -53,9 +53,9 @@ Terima kasih`;
   }
 
   pushPickup() {
-    return `Permisi Kak, mohon dibantu untuk segera proses pick up, konfirmasi dari pengirim sudah melewati jadwal pick up
+    return `Permisi Kak, mohon dibantu untuk segera proses pick up, konfirmasi dari pengirim paket sudah melewati jadwal pick up
 
-${this.deskripsi}
+${this.idResi}
 
 Terima kasih`;
   }
