@@ -55,6 +55,8 @@ Terima kasih`;
   pushPickup() {
     return `Permisi Kak, mohon dibantu untuk segera proses pick up, konfirmasi dari pengirim sudah melewati jadwal pick up
 
+${this.deskripsi}
+
 Terima kasih`;
   }
 
@@ -125,8 +127,10 @@ Terima kasih`;
   balanceTidakSinkron() {
     return `Permisi Tim, mohon dibantu cek kartu berikut karena ada indikasi balance saldo tidak sinkron 
 Email: ${this.email}
-Detail Kartu:
+
+=====Detail Kartu=====
 ${this.deskripsi}
+
 
 Terima kasih`;
   }
@@ -136,8 +140,10 @@ Terima kasih`;
 Email: ${this.email}
 Merchant: 
 Nominal Refund: Rp.
-Detail Kartu:
+
+=====Detail Kartu=====
 ${this.deskripsi}
+
 
 Terima kasih`;
   }
@@ -147,7 +153,8 @@ Terima kasih`;
 Email: ${this.email}
 Merchant: 
 Nominal Tagihan: Rp.
-Detail Kartu:
+
+=====Detail Kartu=====
 ${this.deskripsi}
 
 Terima kasih`;
@@ -157,7 +164,8 @@ Terima kasih`;
     return `Permisi Tim, mohon dibantu cek kartu berikut karena karena konfirmasi dari user/pengguna mengalami gagal menautkan kartunya ke merchant
 Email: ${this.email}
 Merchant: 
-Detail Kartu:
+
+=====Detail Kartu=====
 ${this.deskripsi}
 
 Terima kasih`;
@@ -170,27 +178,27 @@ class TemplateCso {
   }
 
   tanpaTiket() {
-    return `Permisi Kak @~Dayu - CSO komhsip , mohon dibantu cek resi berikut dan bantu klaim tanpa tiket 
+    return `Permisi Kak @ , mohon dibantu cek resi berikut dan bantu klaim tanpa tiket 
 ID Resi: ${this.idResi}
 
 Terima kasih`;
   }
 
   klaimHilang() {
-    return `Permisi Kak @~Dayu - CSO komhsip , mohon dibantu cek resi berikut karena update dari ekspedisi terindikasi hilang
+    return `Permisi Kak @ , mohon dibantu cek resi berikut karena update dari ekspedisi terindikasi hilang
 ID Resi: ${this.idResi}
 
 Terima kasih`;
   }
 
   pushPenarikan() {
-    return `Permisi Kak @~Dayu - CSO komhsip  , mohon dibantu proses penarikan email berikut 
+    return `Permisi Kak @  , mohon dibantu proses penarikan email berikut 
 
 Terima kasih`;
   }
 
   penyelesaianResi() {
-    return `Permisi Kak @~Dayu - CSO komhsip , mohon dibantu cek proses penyelesaian kendala resi berikut 
+    return `Permisi Kak @ , mohon dibantu cek proses penyelesaian kendala resi berikut 
 Email Akun: 
 ID Resi: ${this.idResi}
 Deskripsi: Konfirmasi user/seller sudah refund

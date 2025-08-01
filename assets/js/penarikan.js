@@ -67,7 +67,6 @@ const templateMap = {
 document.addEventListener("DOMContentLoaded", () => {
   const savedOperator = localStorage.getItem("selectOperator");
   const savedShift = localStorage.getItem("selectShift");
-  const savedTemplate = localStorage.getItem("selectTemplate");
 
   if (savedOperator) {
     selectOperator.value = savedOperator;
@@ -76,10 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (savedShift) {
     selectShift.value = savedShift;
-  }
-
-  if (savedTemplate) {
-    selectTemplate.value = savedTemplate;
   }
 
   updateGreeting();
@@ -98,7 +93,7 @@ selectShift.addEventListener("change", () => {
 });
 
 selectTemplate.addEventListener("change", () => {
-  localStorage.setItem("selectTemplate", selectTemplate.value);
+  hasiltemplate.value = "";
 });
 
 window.addEventListener("storage", (event) => {
@@ -110,11 +105,6 @@ window.addEventListener("storage", (event) => {
   if (event.key === "selectShift") {
     selectShift.value = event.newValue || "";
   }
-
-  if (event.key === "selectTemplate") {
-    selectTemplate.value = event.newValue || "";
-  }
-
   updateGreeting();
 });
 
@@ -156,7 +146,7 @@ btnGenerate.addEventListener("click", (e) => {
   if (methodName && typeof generate[methodName] === "function") {
     hasiltemplate.value = generate[methodName]();
   } else {
-    hasiltemplate.value = "Template tidak ditemukan atau belum dibuat.";
+    hasiltemplate.value = "Pastikan semua form input terisi!";
   }
 });
 

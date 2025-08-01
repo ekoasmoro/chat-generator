@@ -29,7 +29,6 @@ const btnResetCso = document.getElementById("reset-cso");
 const sftSpan = document.getElementById("sft");
 const optSpan = document.getElementById("opt");
 
-
 const shiftGreetingMap = {
   pagi: "Selamat Pagi",
   siang: "Selamat Siang",
@@ -45,24 +44,23 @@ function updateGreeting() {
   optSpan.textContent = operator || "";
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const savedOperator = localStorage.getItem("selectOperator");
   const savedShift = localStorage.getItem("selectShift");
 
   if (savedOperator) selectOperator.value = savedOperator;
   if (savedShift) selectShift.value = savedShift;
-  updateGreeting()
+  updateGreeting();
 });
 
 selectOperator.addEventListener("change", () => {
   localStorage.setItem("selectOperator", selectOperator.value);
-  updateGreeting()
+  updateGreeting();
 });
 
 selectShift.addEventListener("change", () => {
   localStorage.setItem("selectShift", selectShift.value);
-  updateGreeting()
+  updateGreeting();
 });
 
 window.addEventListener("storage", (event) => {
@@ -73,9 +71,8 @@ window.addEventListener("storage", (event) => {
   if (event.key === "selectShift") {
     selectShift.value = event.newValue || "";
   }
-  updateGreeting()
+  updateGreeting();
 });
-
 
 const subTemplate = {
   ekspedisi: [
@@ -162,6 +159,20 @@ selectTemplate.addEventListener("change", () => {
       currentSelect.appendChild(option);
     });
   }
+
+  hasiltemplate.value = "";
+});
+
+subTemplateEkspedisi.addEventListener("change", () => {
+  hasiltemplate.value = "";
+});
+
+subTemplateBugs.addEventListener("change", () => {
+  hasiltemplate.value = "";
+});
+
+subTemplateCso.addEventListener("change", () => {
+  hasiltemplate.value = "";
 });
 
 btnGenerateEkpedisi.addEventListener("click", () => {
@@ -171,7 +182,7 @@ btnGenerateEkpedisi.addEventListener("click", () => {
   const idReport = getIdReport.value;
   const idResi = getIdResi.value;
 
-  if (!methodName) return (hasiltemplate.value = "Subtemplate belum dipilih!");
+  if (!methodName) return (hasiltemplate.value = "Sub template belum dipilih!");
 
   const instance = new TemplateEkspedisi(idReport, idResi);
   if (typeof instance[methodName] === "function") {
@@ -190,7 +201,7 @@ btnGenerateBugs.addEventListener("click", () => {
   const email = getEmail.value;
   const deskripsi = getDeskripsi.value;
 
-  if (!methodName) return (hasiltemplate.value = "Subtemplate belum dipilih!");
+  if (!methodName) return (hasiltemplate.value = "Sub template belum dipilih!");
 
   const instance = new TemplateBugs(idReport, email, deskripsi);
   if (typeof instance[methodName] === "function") {
@@ -207,7 +218,7 @@ btnGenerateCso.addEventListener("click", () => {
 
   const idResi = getIdResi.value;
 
-  if (!methodName) return (hasiltemplate.value = "Subtemplate belum dipilih!");
+  if (!methodName) return (hasiltemplate.value = "Sub template belum dipilih!");
 
   const instance = new TemplateCso(idResi);
   if (typeof instance[methodName] === "function") {
@@ -245,7 +256,6 @@ btnResetCso.addEventListener("click", () => {
   openSubCso.style.display = "none";
 });
 
-
 btnPickup.addEventListener("click", () => {
   hasiltemplate.select();
   document.execCommand("copy");
@@ -255,6 +265,3 @@ btnPickup.addEventListener("click", () => {
     cpyPop.style.display = "none";
   }, 2000);
 });
-
-
-
