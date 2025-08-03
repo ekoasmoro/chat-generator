@@ -1,5 +1,5 @@
 class TemplateEkspedisi {
-  constructor(idReport, idResi, deskripsi) {
+  constructor(idReport, idResi) {
     this.idReport = idReport;
     this.idResi = idResi;
   }
