@@ -10,7 +10,8 @@ const selectTemplate = document.getElementById("pilihTemplate");
 const subTemplateEkspedisi = document.getElementById("subtemplate-ekspedisi");
 const subTemplateBugs = document.getElementById("subtemplate-bugs");
 const subTemplateCso = document.getElementById("subtemplate-cso");
-const getIdReport = document.getElementById("idReport");
+const getIdReportBugs = document.getElementById("idBugs");
+const getIdReportEkspedisi = document.getElementById("idEkspedisi");
 const getIdResi = document.getElementById("idresi");
 const getEmail = document.getElementById("emailAkun");
 const getDeskripsi = document.getElementById("deskripsi");
@@ -164,10 +165,34 @@ selectTemplate.addEventListener("change", () => {
 });
 
 subTemplateEkspedisi.addEventListener("change", () => {
+  const idContainer = document.querySelector(".idreport-container");
+  const subSelected = subTemplateEkspedisi.value;
+
+  if (subSelected === "Push Pick Up") {
+    idContainer.style.display = "none";
+  } else {
+    idContainer.style.display = "block";
+  }
+
   hasiltemplate.value = "";
 });
 
 subTemplateBugs.addEventListener("change", () => {
+  const idContainer = document.querySelector(".bugs-container .idreport-container");
+  const subSelected = subTemplateBugs.value;
+
+  if (subSelected === "Balance Saldo Tidak Sinkron") {
+    idContainer.style.display = "none";
+  } else if (subSelected === "Refund Saldo Belum Masuk") {
+    idContainer.style.display = "none";
+  } else if (subSelected === "Gagal Payment") {
+    idContainer.style.display = "none";
+  } else if (subSelected === "Gagal Menautkan") {
+    idContainer.style.display = "none";
+  } else {
+    idContainer.style.display = "block";
+  }
+
   hasiltemplate.value = "";
 });
 
@@ -179,7 +204,7 @@ btnGenerateEkpedisi.addEventListener("click", () => {
   const sub = subTemplateEkspedisi.value;
   const methodName = methodMaps["ekspedisi"]?.[sub];
 
-  const idReport = getIdReport.value;
+  const idReport = getIdReportEkspedisi.value;
   const idResi = getIdResi.value;
 
   if (!methodName) return (hasiltemplate.value = "Sub template belum dipilih!");
@@ -197,7 +222,7 @@ btnGenerateBugs.addEventListener("click", () => {
   const sub = subTemplateBugs.value;
   const methodName = methodMaps["bugs"]?.[sub];
 
-  const idReport = getIdReport.value;
+  const idReport = getIdReportBugs.value;
   const email = getEmail.value;
   const deskripsi = getDeskripsi.value;
 
