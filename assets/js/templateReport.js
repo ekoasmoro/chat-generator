@@ -173,12 +173,14 @@ Terima kasih`;
 }
 
 class TemplateCso {
-  constructor(idResi) {
+  constructor(idResi, email) {
     this.idResi = idResi;
+    this.email = email;
   }
 
   tanpaTiket() {
     return `Permisi Kak @ , mohon dibantu cek resi berikut dan bantu klaim tanpa tiket 
+
 ID Resi: ${this.idResi}
 
 Terima kasih`;
@@ -186,6 +188,7 @@ Terima kasih`;
 
   klaimHilang() {
     return `Permisi Kak @ , mohon dibantu cek resi berikut karena update dari ekspedisi terindikasi hilang
+
 ID Resi: ${this.idResi}
 
 Terima kasih`;
@@ -194,12 +197,15 @@ Terima kasih`;
   pushPenarikan() {
     return `Permisi Kak @  , mohon dibantu proses penarikan email berikut 
 
+${this.idResi} 
+    
 Terima kasih`;
   }
 
   penyelesaianResi() {
     return `Permisi Kak @ , mohon dibantu cek proses penyelesaian kendala resi berikut 
-Email Akun: 
+
+Email Akun: ${this.email}
 ID Resi: ${this.idResi}
 Deskripsi: Konfirmasi user/seller sudah refund
 

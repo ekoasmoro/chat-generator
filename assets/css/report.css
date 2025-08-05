@@ -145,13 +145,34 @@ main {
 }
 
 @keyframes slide-up {
-  0%, 10% { transform: translateY(0%); }
-  15%, 25% { transform: translateY(-100%); }
-  30%, 40% { transform: translateY(-200%); }
-  45%, 55% { transform: translateY(-300%); }
-  60%, 70% { transform: translateY(-400%); }
-  75%, 85% { transform: translateY(-500%); }
-  90%, 100% { transform: translateY(0%); }
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+  15%,
+  25% {
+    transform: translateY(-100%);
+  }
+  30%,
+  40% {
+    transform: translateY(-200%);
+  }
+  45%,
+  55% {
+    transform: translateY(-300%);
+  }
+  60%,
+  70% {
+    transform: translateY(-400%);
+  }
+  75%,
+  85% {
+    transform: translateY(-500%);
+  }
+  90%,
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .form {
@@ -170,7 +191,6 @@ main {
   margin-bottom: 30px;
   align-self: flex-start;
 }
-
 
 .select-form {
   display: flex;
@@ -206,20 +226,26 @@ button {
 }
 
 #copyResult {
-  width: 160px; 
+  width: 160px;
 }
 
 button:hover {
   background-color: #272d9e;
 }
 
-#reset, #reset-ekspedisi, #reset-bugs, #reset-cso {
+#reset,
+#reset-ekspedisi,
+#reset-bugs,
+#reset-cso {
   background-color: var(--secondary-color);
   color: var(--others-color1);
   border: 2px solid var(--others-color1);
 }
 
-#reset:hover, #reset-ekspedisi:hover, #reset-bugs:hover, #reset-cso:hover {
+#reset:hover,
+#reset-ekspedisi:hover,
+#reset-bugs:hover,
+#reset-cso:hover {
   background-color: #f5f5f5;
 }
 
@@ -249,7 +275,6 @@ button:hover {
   margin-bottom: 20px;
 }
 
-
 .sub-container {
   display: flex;
   align-items: flex-start;
@@ -277,13 +302,13 @@ button:hover {
   gap: 10px;
 }
 
-.input-resi, .input-deskripsi {
+.input-resi,
+.input-deskripsi {
   margin-top: 10px;
   display: flex;
   gap: 15px;
   width: 100%;
 }
-
 
 textarea {
   resize: none;
@@ -298,14 +323,13 @@ textarea {
 
 .input-resi textarea {
   height: 150px;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 15px;
 }
 
-
 .input-deskripsi textarea {
   height: 220px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .result-container h2 {
@@ -465,11 +489,11 @@ footer {
 
   .input-resi textarea {
     width: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .input-deskripsi textarea {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .sub-template select {
@@ -477,7 +501,6 @@ footer {
   }
 
   footer {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
-
 }

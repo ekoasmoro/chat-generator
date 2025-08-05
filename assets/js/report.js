@@ -14,7 +14,9 @@ const getIdReportBugs = document.getElementById("idBugs");
 const getIdReportEkspedisi = document.getElementById("idEkspedisi");
 const getIdResi = document.getElementById("idresi");
 const getEmail = document.getElementById("emailAkun");
+const getEmailCso = document.getElementById("emailcso");
 const getDeskripsi = document.getElementById("deskripsi");
+const getDeskripsiCso = document.getElementById("deskripsicso");
 const hasiltemplate = document.getElementById("result-box");
 const btnPickup = document.getElementById("copyResult");
 const cpyPop = document.querySelector(".cpy-container");
@@ -141,6 +143,9 @@ const subSelectMap = {
 
 selectTemplate.addEventListener("change", () => {
   const kategori = selectTemplate.value;
+  const emailContainerCso = document.querySelector(
+    ".sub-template .email-container"
+  );
 
   openSubEkspedisi.style.display = "none";
   openSubBugs.style.display = "none";
@@ -148,7 +153,10 @@ selectTemplate.addEventListener("change", () => {
 
   if (kategori === "ekspedisi") openSubEkspedisi.style.display = "block";
   else if (kategori === "bugs") openSubBugs.style.display = "block";
-  else if (kategori === "cso") openSubCso.style.display = "block";
+  else if (kategori === "cso") {
+    openSubCso.style.display = "block";
+    emailContainerCso.style.display = "none";
+  }
 
   const currentSelect = subSelectMap[kategori];
   if (currentSelect) {
@@ -178,7 +186,9 @@ subTemplateEkspedisi.addEventListener("change", () => {
 });
 
 subTemplateBugs.addEventListener("change", () => {
-  const idContainer = document.querySelector(".bugs-container .idreport-container");
+  const idContainer = document.querySelector(
+    ".bugs-container .idreport-container"
+  );
   const subSelected = subTemplateBugs.value;
 
   if (subSelected === "Balance Saldo Tidak Sinkron") {
@@ -197,6 +207,15 @@ subTemplateBugs.addEventListener("change", () => {
 });
 
 subTemplateCso.addEventListener("change", () => {
+  const emailContainer = document.querySelector(
+    ".sub-template .email-container"
+  );
+  const subSelected = subTemplateCso.value;
+  if (subSelected === "Penyelesaian Resi") {
+    emailContainer.style.display = "block";
+  } else {
+    emailContainer.style.display = "none";
+  }
   hasiltemplate.value = "";
 });
 
@@ -241,11 +260,12 @@ btnGenerateCso.addEventListener("click", () => {
   const sub = subTemplateCso.value;
   const methodName = methodMaps["cso"]?.[sub];
 
-  const idResi = getIdResi.value;
+  const idResi = getDeskripsiCso.value;
+  const email = getEmailCso.value;
 
   if (!methodName) return (hasiltemplate.value = "Sub template belum dipilih!");
 
-  const instance = new TemplateCso(idResi);
+  const instance = new TemplateCso(idResi, email);
   if (typeof instance[methodName] === "function") {
     const template = instance[methodName]();
     hasiltemplate.value = template;
@@ -257,7 +277,7 @@ btnGenerateCso.addEventListener("click", () => {
 btnResetEkpedisi.addEventListener("click", () => {
   selectTemplate.value = "";
   subTemplateEkspedisi.innerHTML = `<option value="">-- Pilih Template --</option>`;
-  getIdReport.value = "";
+  getIdReportEkspedisi.value = "";
   getIdResi.value = "";
   hasiltemplate.value = "";
   openSubEkspedisi.style.display = "none";
@@ -266,7 +286,7 @@ btnResetEkpedisi.addEventListener("click", () => {
 btnResetBugs.addEventListener("click", () => {
   selectTemplate.value = "";
   subTemplateBugs.innerHTML = `<option value="">-- Pilih Template --</option>`;
-  getIdReport.value = "";
+  getIdReportBugs.value = "";
   getEmail.value = "";
   getDeskripsi.value = "";
   hasiltemplate.value = "";
@@ -276,7 +296,7 @@ btnResetBugs.addEventListener("click", () => {
 btnResetCso.addEventListener("click", () => {
   selectTemplate.value = "";
   subTemplateCso.innerHTML = `<option value="">-- Pilih Template --</option>`;
-  getIdResi.value = "";
+  getDeskripsiCso.value = "";
   hasiltemplate.value = "";
   openSubCso.style.display = "none";
 });
