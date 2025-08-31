@@ -7,9 +7,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/report.css" />
+    <link rel="stylesheet" href="./assets/css/sobat.css" />
 
-    <title>Chat Generator | Report</title>
+    <title>Chat Generator | Sobat CSO</title>
     <link rel="icon" href="./assets/images/settings.ico" />
   </head>
   <body>
@@ -23,14 +23,14 @@
           <li><a href="index.html">Komship</a></li>
           <li><a href="komcard.html">Komcard</a></li>
           <li><a href="penarikan.html">Penarikan Saldo</a></li>
-          <li><a href="#">Report</a></li>
-          <li><a href="sobat.html">Sobat CSO</a></li>
+          <li><a href="report.html">Report</a></li>
+          <li><a href="#">Sobat CSO</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="title-content">
-        <h1>REPORT</h1>
+        <h1>SOBAT CSO</h1>
         <div class="slide-container">
           <h2>Halo Kak <span id="opt"></span> |</h2>
           <div class="content-slide">
@@ -53,9 +53,11 @@
             <img src="./assets/images/icon/user.png" alt="user-icon" />
             <select name="nama_operator" id="operator">
               <option value="">-- Pilih Operartor --</option>
-              <option value="Hanin">Hanin</option>
-              <option value="Steven">Steven</option>
-              <option value="Maheswari">Maheswari</option>
+              <option value="AM">Amin</option>
+              <option value="FA">Fai</option>
+              <option value="ID">Ida</option>
+              <option value="IN">Indah</option>
+              <option value="ZA">Zam</option>
             </select>
           </div>
 
@@ -78,7 +80,8 @@
               <option value="">-- Pilih Main Template --</option>
               <option value="ekspedisi">Ekspedisi</option>
               <option value="bugs">Bugs Report</option>
-              <option value="cso">CSO Report</option>
+              <option value="verifikasi">Verifikasi & Klaim</option>
+              <option value="penarikan">Penarikan</option>
             </select>
           </div>
         </div>
@@ -99,19 +102,23 @@
                 </div>
               </div>
 
-              <div class="idreport-container">
-                <label for="idreport">Input ID Report</label>
-                <div class="select-form">
-                  <img
-                    src="./assets/images/icon/qr-code.png"
-                    alt="idreport-icon"
-                  />
-                  <input
-                    type="text"
-                    name="idReport"
-                    id="idEkspedisi"
-                    placeholder="Input ID Report disini"
-                  />
+              <div class="leveling-container">
+                <label for="leveling">Level User</label>
+                <div class="leveling-user">
+                  <div class="level">
+                    <label for="reguler" class="special-user"
+                      >User Jelata</label
+                    >
+                    <input type="radio" name="userLevel" value="reguler" />
+                  </div>
+                  <div class="level">
+                    <label for="reguler">Juragan</label>
+                    <input type="radio" name="userLevel" value="juragan" />
+                  </div>
+                  <div class="level">
+                    <label for="reguler">Saudagar</label>
+                    <input type="radio" name="userLevel" value="saudagar" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -149,24 +156,8 @@
                 </div>
               </div>
 
-              <div class="idreport-container">
-                <label for="idreport">Input ID Report</label>
-                <div class="select-form">
-                  <img
-                    src="./assets/images/icon/qr-code.png"
-                    alt="idreport-icon"
-                  />
-                  <input
-                    type="text"
-                    name="idBugs"
-                    id="idBugs"
-                    placeholder="Input ID Report"
-                  />
-                </div>
-              </div>
-
               <div class="email-container">
-                <label for="email">Email Akun</label>
+                <label for="emailAkun">Email Akun</label>
                 <div class="select-form">
                   <img
                     src="./assets/images/icon/personal.png"
@@ -183,7 +174,7 @@
             </div>
 
             <div class="second-input">
-              <label for="idreport">Deskripsi Detail Kendala/Kartu</label>
+              <label for="deskripsi">Deskripsi Detail Kendala/Kartu</label>
               <div class="input-deskripsi">
                 <img src="./assets/images/icon/wirte.png" alt="deskripsi" />
                 <textarea
@@ -200,37 +191,22 @@
           </div>
         </div>
 
-        <div class="cso-container">
-          <h2>Template Untuk Report CSO</h2>
+        <div class="verifikasi-claim">
+          <h2>Template Untuk Verifikasi & Klaim</h2>
 
-          <div class="subcso-container">
-            <div class="cso-input">
+          <div class="verifikasi-container">
+            <div class="verifikasi-input">
               <div class="sub-template">
                 <label for="subtemplate">Pilih Sub Template</label>
                 <div class="select-form">
                   <img src="./assets/images/icon/list.png" alt="sub-icon" />
-                  <select name="pilih-template" id="subtemplate-cso">
+                  <select name="pilih-template" id="subtemplate-verifikasi">
                     <option value="">-- Pilih Template --</option>
                   </select>
                 </div>
-                <div class="email-container">
-                  <label for="email">Email Akun</label>
-                  <div class="select-form">
-                    <img
-                      src="./assets/images/icon/personal.png"
-                      alt="email-icon"
-                    />
-                    <input
-                      type="text"
-                      name="emailAkun"
-                      id="emailcso"
-                      placeholder="Input email akun"
-                    />
-                  </div>
-                </div>
               </div>
               <div class="second-input">
-                <label for="idreport">Deskripsi Daftar Resi/Email</label>
+                <label for="deskripsi">Lampirkan Link Dokumentasi</label>
                 <div class="input-resi">
                   <img
                     src="./assets/images/icon/wirte.png"
@@ -238,16 +214,70 @@
                   />
                   <textarea
                     name="deskripsi"
-                    id="deskripsicso"
-                    placeholder="Input daftar resi atau email akun"
+                    id="dokumentasi"
+                    placeholder=""
                   ></textarea>
                 </div>
               </div>
             </div>
           </div>
           <div class="button-container">
-            <button id="generate-cso" name="generate">Generate</button>
-            <button id="reset-cso" name="reset">Reset</button>
+            <button id="generate-verifikasi" name="generate">Generate</button>
+            <button id="reset-verifikasi" name="reset">Reset</button>
+          </div>
+        </div>
+
+        <div class="penarikan">
+          <h2>Template Untuk Penarikan Saldo</h2>
+
+          <div class="penarikan-container">
+            <div class="penarikan-input">
+              <div class="sub-template">
+                <label for="subtemplate">Pilih Sub Template</label>
+                <div class="select-form">
+                  <img src="./assets/images/icon/list.png" alt="sub-icon" />
+                  <select name="pilih-template" id="subtemplate-penarikan">
+                    <option value="">-- Pilih Template --</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="second-input">
+                <div class="saldo-container">
+                  <label for="email">Sisakan Saldo</label>
+                  <div class="select-form">
+                    <img
+                      src="./assets/images/icon/indonesian-rupiah.png"
+                      alt="email-icon"
+                    />
+                    <input
+                      type="text"
+                      name="Saldo"
+                      id="nominalSaldo"
+                      placeholder="Inputkan nilai saldo"
+                    />
+                  </div>
+                </div>
+                <div class="kendala-input">
+                  <label for="deskripsi">Resi Berkendala</label>
+                  <div class="input-resi">
+                    <img
+                      src="./assets/images/icon/barcode.png"
+                      alt="deskripsi-icon"
+                    />
+                    <textarea
+                      name="idResi"
+                      id="idResiPenarikan"
+                      placeholder="cth: KOMRCKOM1234, KOMSHIP1234"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button id="generate-penarikan" name="generate">Generate</button>
+            <button id="reset-penarikan" name="reset">Reset</button>
           </div>
         </div>
 
@@ -277,6 +307,6 @@
     <footer>
       <span>© 2025 Website by Eko Asmoro | Chat Generator v2.0 Prototype </span>
     </footer>
-    <script src="./assets/js/report.js" type="module"></script>
+    <script src="./assets/js/sobat.js" type="module"></script>
   </body>
 </html>

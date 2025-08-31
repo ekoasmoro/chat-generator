@@ -1,0 +1,542 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ededed;
+  --secondary-color: #ffffff;
+  --others-color1: #3a41c6;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  margin: 30px auto;
+  max-width: 1200px;
+  width: 100%;
+  height: 65px;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  border-radius: 50px;
+  box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+.logo-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.logo-container img {
+  width: 42px;
+  height: auto;
+}
+
+.logo-container span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  position: relative;
+  font-weight: 400;
+}
+
+nav ul li a:hover {
+  font-weight: 600;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  height: 3px;
+  background-color: var(--others-color1);
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+  border-radius: 1.5px;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 15px auto;
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-template-rows: 120px auto;
+  grid-template-areas:
+    "title result"
+    "form result";
+  row-gap: 20px;
+  column-gap: 30px;
+}
+
+.title-content {
+  grid-area: title;
+  background-color: #3906c4;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.2);
+}
+
+.title-content h1 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.slide-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slide-container h2 {
+  color: var(--secondary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.content-slide ol {
+  list-style: none;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  overflow: hidden;
+}
+
+.content-slide ol li {
+  animation: slide-up 12s infinite;
+}
+
+.content-slide ol li span {
+  font-weight: 600;
+  -webkit-text-fill-color: transparent;
+  background: white;
+  -webkit-background-clip: text;
+  white-space: nowrap;
+  font-size: 1.25rem;
+}
+
+@keyframes slide-up {
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+  15%,
+  25% {
+    transform: translateY(-100%);
+  }
+  30%,
+  40% {
+    transform: translateY(-200%);
+  }
+  45%,
+  55% {
+    transform: translateY(-300%);
+  }
+  60%,
+  70% {
+    transform: translateY(-400%);
+  }
+  75%,
+  85% {
+    transform: translateY(-500%);
+  }
+  90%,
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.form {
+  background-color: var(--secondary-color);
+  grid-area: form;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0px 2px 23px rgb(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.form h2 {
+  margin-bottom: 30px;
+  align-self: flex-start;
+}
+
+.select-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0 30px;
+}
+
+.select-form select,
+.select-form input {
+  width: 200px;
+  height: 34px;
+  padding: 0 7px;
+}
+
+.button-container {
+  margin: 30px auto 20px;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--others-color1);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+#copyResult {
+  width: 160px;
+}
+
+button:hover {
+  background-color: #272d9e;
+}
+
+#reset,
+#reset-ekspedisi,
+#reset-bugs,
+#reset-verifikasi,
+#reset-penarikan {
+  background-color: var(--secondary-color);
+  color: var(--others-color1);
+  border: 2px solid var(--others-color1);
+}
+
+#reset:hover,
+#reset-ekspedisi:hover,
+#reset-bugs:hover,
+#reset-verifikasi:hover,
+#reset-penarikan:hover {
+  background-color: #f5f5f5;
+}
+
+.result {
+  grid-area: result;
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.2);
+}
+
+.ekspedisi-container,.bugs-container,.verifikasi-claim, .penarikan {
+  display: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+
+.leveling-user {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.level {
+  display: flex;
+  border: 1px solid rgb(104, 104, 104);
+  padding: 5px;
+  justify-content: space-between;
+  width: 40%;
+  height: 50px;
+  align-items: start;
+  cursor: pointer;
+  transition: border-color .2s;
+  border-radius: 5px;
+}
+
+.level.active {
+  border-color: #3d45e2;
+  border-width: 3px;
+}
+
+.level label {
+  font-size: .8rem;
+}
+
+.verifikasi-claim, .penarikan {
+  display: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.sub-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+
+.verifikasi-container, .penarikan-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+
+
+.verifikasi-input, .penarikan-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-input {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.second-input {
+  width: 50%;
+}
+
+.resi-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-resi,
+.input-deskripsi {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 350px;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  border-radius: 10px;
+  text-align: justify;
+}
+
+.input-resi textarea {
+  height: 145px;
+  font-size: 0.9rem;
+  padding: 15px;
+  white-space: pre-line;
+}
+
+.input-deskripsi textarea {
+  height: 220px;
+  font-size: 0.9rem;
+}
+
+.result-container h2 {
+  padding-bottom: 10px;
+}
+
+.title-result {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.box-result {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+img {
+  width: 34px;
+  height: 34px;
+}
+
+.cpy-container {
+  position: absolute;
+  transform: translateY(80%);
+  background-color: #f6fff6;
+  z-index: 1000;
+  border-radius: 10px;
+  width: 300px;
+  height: 150px;
+  color: #3e903e;
+  border: 1px solid #3e903e;
+  box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.cpy-pop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 1rem;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .logo-container {
+    margin-left: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .title-content {
+    padding: 15px;
+  }
+
+  .title-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .slide-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .content-slide ol li span {
+    font-size: 1rem;
+  }
+
+  .form,
+  .result {
+    padding: 20px;
+  }
+
+  .form h2,
+  .result h2 {
+    font-size: 1.2rem;
+  }
+
+  .select-form select {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  .box-result {
+    width: 100%;
+  }
+
+  textarea {
+    height: 250px;
+  }
+
+  .cpy-container {
+    transform: translateY(20%);
+    width: 90%;
+    height: auto;
+  }
+
+  .cpy-container span {
+    font-size: 0.7rem;
+  }
+
+  .sub-container {
+    flex-direction: column;
+  }
+
+  .cso-input {
+    flex-direction: column;
+  }
+
+  .select-form select {
+    width: 100%;
+  }
+
+  .second-input {
+    width: 100%;
+  }
+
+  .input-resi textarea {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .input-deskripsi textarea {
+    font-size: 0.8rem;
+  }
+
+  .sub-template select {
+    width: max-content;
+  }
+
+  footer {
+    font-size: 0.6rem;
+  }
+}
