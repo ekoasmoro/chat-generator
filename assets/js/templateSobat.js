@@ -9,11 +9,11 @@ class TemplateEkspedisi {
       case "reguler":
         return "";
       case "juragan":
-        return `🥈Case user Juragan KOMSHIP🥈
-(Pengguna Prioritas)\n\n`;
+        return `🥈*Case user Juragan KOMSHIP*🥈
+(Diprioritaskan)\n\n`;
       case "saudagar":
-        return `🥇Case user Saudagar KOMSHIP🥇
-(Pengguna Prioritas Utama)\n\n`;
+        return `🥇*Case user Saudagar KOMSHIP*🥇
+(Sangat Diprioritaskan)\n\n`;
       default:
         alert("Pilih Level User");
         return "";
