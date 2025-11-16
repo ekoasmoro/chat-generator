@@ -123,6 +123,7 @@ class Generate extends Template {
     const sapId = id.substring(0, 7);
     const jntId = id.substring(0, 2);
     const idexId = id.substring(0, 3);
+    const spxID = id.substring(0, 3);
 
     if (ninjaId === "KOMRCKOM") {
         this.hasilCheck = "Ninja";
@@ -132,6 +133,8 @@ class Generate extends Template {
         this.hasilCheck = "ID Ekspress";
     } else if (jntId === "JO") {
         this.hasilCheck = "J&T";
+    } else if (spxId === "SPX") {
+        this.hasilCheck = "SPX";
     } else if (id.length === 16) {
         this.hasilCheck = "JNE";
     } else if (id.length === 12 && jntId !== "JO") {
